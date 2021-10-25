@@ -12,6 +12,8 @@ bin-release/
 *.air
 *.ipa
 *.apk
+*.class
+*.iml
 
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
@@ -21,3 +23,7 @@ bin-release/
 /.idea/compiler.xml
 /.idea/encodings.xml
 /.idea/jarRepositories.xml
+/target
+/.idea
+
+
