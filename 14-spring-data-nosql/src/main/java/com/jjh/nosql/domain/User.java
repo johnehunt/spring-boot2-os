@@ -2,7 +2,6 @@ package com.jjh.nosql.domain;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -12,7 +11,7 @@ public class User {
     @Id
     private String id;
     private String name;
-    private Integer age;
+    private int age;
 
     @Field("email")
     private String emailAddress;
@@ -25,7 +24,6 @@ public class User {
         this.age = age;
     }
 
-    @PersistenceConstructor
     public User(final String name,
                 @Value("#root.age ?: 0") final Integer age,
                 final String emailAddress) {

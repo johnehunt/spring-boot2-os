@@ -28,6 +28,10 @@ public class MainApp {
             List<User> users = service.getAllUsers();
             System.out.println(users);
 
+            User u1 = users.get(0);
+            User u2 = service.getUser(u1.getId());
+            System.out.println(u2);
+
             for (User u : users) {
                service.deleteUser(u.getId());
             }

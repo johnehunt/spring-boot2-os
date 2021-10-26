@@ -11,8 +11,12 @@ import java.util.Optional;
 @Component
 public class UserService {
 
+    private UserRepository repository;
+
     @Autowired
-    UserRepository repository;
+    public void setRepository(UserRepository repository) {
+        this.repository = repository;
+    }
 
     public UserService() {
         System.out.println("UserService.<init>()");
@@ -20,7 +24,7 @@ public class UserService {
 
     public void addUser(User user) {
         System.out.println("UserService.addUser(" + user + ")");
-        this.repository.save(user);
+        repository.save(user);
     }
 
     public List<User> getAllUsers() {
@@ -30,7 +34,7 @@ public class UserService {
 
     public void updateUser(User newVersionOfUser) {
         System.out.println("UsershopService.updateUser(" + newVersionOfUser + ")");
-        this.repository.save(newVersionOfUser);
+        repository.save(newVersionOfUser);
     }
 
     public void deleteUser(String id) {
@@ -46,7 +50,7 @@ public class UserService {
 
     public List<User> getUsersByName(String name) {
         System.out.println("UsershopService.getUserByName(" + name + ")");
-        List<User> users = repository.findByName(name);
+        List<User> users = repository.findUsersByName(name);
         return users;
     }
 
