@@ -29,3 +29,8 @@ bin-release/
 /.idea
 
 
+/06-spring-boot-properties/target/classes/application.properties
+/06-spring-environments/target/classes/dev-myprops.properties
+/06-properties/target/classes/jdbc.properties
+/06-spring-environments/target/classes/prod-myprops.property
+/06-spring-environments/target/classes/test-myprops.properties
