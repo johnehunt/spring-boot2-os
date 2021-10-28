@@ -24,6 +24,7 @@ bin-release/
 /.idea/encodings.xml
 /.idea/jarRepositories.xml
 /target
+/target/classes
 /.idea
 
 
