@@ -25,6 +25,7 @@ bin-release/
 /.idea/jarRepositories.xml
 /target
 /target/classes
+/target/classes/*.properties
 /.idea
 
 
