@@ -34,3 +34,4 @@ bin-release/
 /06-properties/target/classes/jdbc.properties
 /06-spring-environments/target/classes/prod-myprops.property
 /06-spring-environments/target/classes/test-myprops.properties
+/07-spring-web-helloworld/target/classes
