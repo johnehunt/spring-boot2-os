@@ -36,3 +36,4 @@ bin-release/
 /06-spring-environments/target/classes/test-myprops.properties
 /07-spring-web-helloworld/target/classes
 /17-spring-batch/target/classes
+/*/target/classes/
