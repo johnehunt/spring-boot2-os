@@ -6,7 +6,7 @@ import org.springframework.core.env.Environment;
 
 @Configuration
 @Profile("prod")
-@PropertySource("classpath*:prod-myprops.properties")
+@PropertySource("classpath:prod-myprops.properties")
 public class ProdAppConfig {
 
 	@Autowired

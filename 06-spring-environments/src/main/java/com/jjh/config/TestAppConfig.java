@@ -6,7 +6,7 @@ import org.springframework.core.env.Environment;
 
 @Configuration
 @Profile("test")
-@PropertySource("classpath*:test-myprops.properties")
+@PropertySource("classpath:test-myprops.properties")
 public class TestAppConfig {
 
 	@Autowired
