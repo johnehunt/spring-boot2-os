@@ -13,8 +13,12 @@ import java.util.Optional;
 @Component("employeeDao")
 public class EmployeeDAOImpl implements EmployeeDAO {
 
-    @Autowired
     private EmployeeRepository repo;
+
+    @Autowired
+    public void setRepo(EmployeeRepository repo) {
+        this.repo = repo;
+    }
 
     public Employee findById(int id) {
         Optional<Employee> opt = this.repo.findById(id);
@@ -22,7 +26,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     public List<Employee> findAll() {
-        ArrayList list = new ArrayList();
+        ArrayList<Employee> list = new ArrayList();
         Iterable<Employee> iterator = this.repo.findAll();
         iterator.forEach(list::add);
         return list;
