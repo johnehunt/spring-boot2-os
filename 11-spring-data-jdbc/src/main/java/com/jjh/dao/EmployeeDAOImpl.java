@@ -26,21 +26,21 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	public List<Employee> getEmployees() {
 		List<Employee> employees = new ArrayList<>();
-		String sql = "SELECT * FROM employee";
+		String sql = "SELECT * FROM employee.employee";
 		List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
 		Iterator<Map<String, Object>> it = list.iterator();
 		while (it.hasNext()) {
 			Map<String, Object> map = it.next();
 			String name = (String) map.get("name");
 			Long employeeId = (Long) map.get("id");
-			Employee book = new EmployeeImpl(employeeId + "", name);
-			employees.add(book);
+			Employee employee = new EmployeeImpl(employeeId.intValue(), name);
+			employees.add(employee);
 		}
 		return employees;
 	}
 
 	public int addEmployee(Employee e) {
-		String sql = "INSERT INTO employee (id, name) values (?,?)";
+		String sql = "INSERT INTO employee.employee (id, name) values (?,?)";
 		int c = jdbcTemplate.update(sql, e.getId(), e.getName());
 		return c;
 	}
@@ -50,7 +50,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	// ---------------------------------------------------------------
 
 	public List<Employee> getAltEmployees() {
-		String sql = "SELECT * FROM employee";
+		String sql = "SELECT * FROM employee.employee";
 		RowMapper<Employee> rowMapper = new EmployeeMapper();
 		return this.jdbcTemplate.query(sql, rowMapper);
 	}
@@ -59,7 +59,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 		public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
 			String name = rs.getString("name");
-			String id = rs.getInt("id") + "";
+			int id = rs.getInt("id");
 			return new EmployeeImpl(id, name);
 		}
 

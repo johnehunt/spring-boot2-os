@@ -3,12 +3,12 @@ package com.jjh.domain;
 public class EmployeeImpl implements Employee {
 
 	private String name;
-	private String employeeId;
+	private int employeeId;
 
 	public EmployeeImpl() {
 	}
 
-	public EmployeeImpl(String employeeId, String name) {
+	public EmployeeImpl(int employeeId, String name) {
 		this.employeeId = employeeId;
 		this.name = name;
 	}
@@ -21,11 +21,11 @@ public class EmployeeImpl implements Employee {
 		this.name = name;
 	}
 
-	public String getId() {
+	public int getId() {
 		return employeeId;
 	}
 
-	public void setId(String employeeId) {
+	public void setId(int employeeId) {
 		this.employeeId = employeeId;
 	}
 

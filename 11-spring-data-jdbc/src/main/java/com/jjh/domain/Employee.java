@@ -6,8 +6,8 @@ public interface Employee {
 
 	void setName(String name);
 
-	String getId();
+	int getId();
 
-	void setId(String employeeId);
+	void setId(int employeeId);
 
 }
