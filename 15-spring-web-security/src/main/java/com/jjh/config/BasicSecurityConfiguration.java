@@ -26,7 +26,7 @@ public class BasicSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .inMemoryAuthentication()
                 .withUser("jeh")
                 .password("{noop}user123") // Otherwise expects encoded password
-                .roles("USER") // Note  note ROLE automatically added to USER
+                .roles("USER") // Note ROLE automatically added to USER
                 .and()
                 .withUser("admin")
                 .password("{noop}admin")
