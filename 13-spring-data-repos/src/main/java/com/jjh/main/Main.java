@@ -14,7 +14,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Starting Main JPA Application!");
+        System.out.println("Starting Main JPA Repositories Application!");
         ConfigurableApplicationContext context = null;
         try {
 
