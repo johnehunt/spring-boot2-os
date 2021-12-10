@@ -1,0 +1,33 @@
+createdb employees
+
+psql employees
+
+To set up a role use
+
+CREATE ROLE jjh LOGIN PASSWORD 'user123';
+
+Set up table
+
+-- Table: public.employee
+
+-- DROP TABLE IF EXISTS public.employee;
+
+CREATE TABLE IF NOT EXISTS public.employee
+(
+    id integer NOT NULL,
+    name character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT employee_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.employee
+    OWNER to jjh;
+
+INSERT INTO public.employee(
+	id, name)
+	VALUES (1, 'John');
+
+INSERT INTO public.employee(
+	id, name)
+	VALUES (2, 'Denise');
