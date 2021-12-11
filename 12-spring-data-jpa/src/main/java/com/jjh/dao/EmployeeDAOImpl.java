@@ -31,7 +31,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     public List<Employee> findAll() {
-        TypedQuery<Employee> query = entityManager.createQuery("SELECT e FROM employee e", Employee.class);
+        TypedQuery<Employee> query = entityManager.createQuery("SELECT e FROM Employee e", Employee.class);
         return query.getResultList();
     }
 

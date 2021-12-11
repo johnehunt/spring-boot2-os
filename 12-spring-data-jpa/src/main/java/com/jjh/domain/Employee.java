@@ -2,7 +2,8 @@ package com.jjh.domain;
 
 import javax.persistence.*;
 
-@Entity(name="employee")
+@Entity
+@Table(name="employee")
 public class Employee {
 
 	@Column(name="name")
