@@ -25,7 +25,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     public List<Employee> findNative() {
-        Query query = entityManager.createNativeQuery("Select * FROM employee.employee", Employee.class);
+        Query query = entityManager.createNativeQuery("Select * FROM employee", Employee.class);
         List<Employee> list = (List<Employee>)query.getResultList();
         return list;
     }
