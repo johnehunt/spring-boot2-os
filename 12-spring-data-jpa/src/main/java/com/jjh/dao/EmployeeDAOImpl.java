@@ -52,6 +52,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         entityManager.remove(emp);
     }
 
+    @Transactional
     public void refresh(Employee emp) {
         entityManager.refresh(emp);
     }
